@@ -41,7 +41,8 @@ Los pasos para ejecutar el Script suele ser el siguiente:
 3. Descargar/Clonar el Script:
         - Descargar el ZIP o
         - Clonar el repositorio con el comando:
-        ```git
+
+        ```Console
         git clone https://github.com/abustosp/Control-Monotributistas.git
         ```
 

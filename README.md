@@ -39,19 +39,20 @@ Los pasos para ejecutar el Script suele ser el siguiente:
 2. Instalar Python (https://www.python.org/downloads/)
 
 3. Descargar/Clonar el Script:
-        - Descargar el ZIP o
-        - Clonar el repositorio con el comando:
+    - Descargar el ZIP o
+    - Clonar el repositorio con el comando en la consola/terminal:
 
-        ```Console
-        git clone https://github.com/abustosp/Control-Monotributistas.git
-        ```
+    ```
+    git clone https://github.com/abustosp/Control-Monotributistas.git
+    ```
 
 4. Crearse un entorno virtual. Generalmente se hace con el comando:
 
+    Python en windows:
     ```Python en Windows
     python -m venv NombreDelEntornoVirtualaCrear
     ```
-
+    Python en Linux/Mac:	
     ```Python en Linux
     python3 -m venv NombreDelEntornoVirtualaCrear
     ```

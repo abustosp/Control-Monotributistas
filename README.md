@@ -1,66 +1,101 @@
 # Control de Monotributistas
 
-Script para realizar masivamente el control de la facturación de los monotributistas en base a los archivos de Mis Comprobantes emitidos y un Excel con las Escalas de Facturación.
+Progrmama/Script para realizar masivamente el control de la facturación de los monotributistas en base a los archivos de Mis Comprobantes emitidos y un Excel con las Escalas de Facturación.
 
-## El licenciamiento es con GPL (es decir que no se puede distribuir comercialmente, solamente GRATIS). y si se utiliza este el código, su derivado también debe ser distribuido abierta y gratuitamente. 
+---
 
-Los pasos para instalar el programa es:
-    
-    ֎ Descargar el instalador (el .exe)
+El licenciamiento es bajo GPL (es decir que no se puede distribuir comercialmente, solamente GRATIS). y si se utiliza este el código, sus derivados también debne ser distribuidos de manera abierta y gratuita. 
 
-    ֎ Instalar el programa con doble click en el .exe
+---
 
-Existen actualmente 2 versiones del Programa:
+## Ejecución del Programa
 
-    ֎ la V 1.0 : requiere que los archivos de Mis Comprobantes tengan un formato de nombre específico 
+1. Instalar el .exe correspondiente a la versión que se quiera utilizar. Existen actualmente 2 versiones del Programa:
+
+    - V 1.0 : requiere que los archivos de Mis Comprobantes tengan un formato de nombre específico:
 
         Fin de CUIT - MCE  - Periodo (en formato AAAAMM) - CUIT (sin guiones) - Nombre .xlxs
 
         Ejemplo : "0 - MCE - 202304 - 20374730429 - Agustin Bustos.xlsx"
 
-    ֎ la V 1.0.1: No requiere nombres específicos pero requiere que existe la primer fila donde dice "Mis Comprobantes Recibidos - CUIT XXXXXXXXXXX" 
+    - V 1.0.1: No requiere nombres específicos pero requiere que existe la primer fila donde dice "Mis Comprobantes Recibidos - CUIT XXXXXXXXXXX" 
 
-Una vez instalado el programa se debe ejecutarlo, para lo cual es importante:
+2. Una vez instalado el programa se debe ejecutarlo, para lo cual es importante:
 
-    ֎ Actualizar el Excel de "Categorias.xlsx" con las categorías de monotributo vigentes y el periodo a analizar
+    - Actualizar el Excel de "Categorias.xlsx" con las categorías de monotributo vigentes y el periodo a analizar
 
-    ֎ Completar un Excel con la lista de los archivos a analizar (existe un ejemplo donde se encuentra el instalado el programa llamado "Ejemplo de Lista.xlsx")
+    - Completar un Excel con la lista de los archivos a analizar (existe un ejemplo donde se encuentra el instalado el programa llamado "Ejemplo de Lista.xlsx")
 
-        ֎ En caso de no tener listados los Excels con sus ubicaciones Existe el Boton de "listador" que genera "Archivos.txt" con la lista de los archivos de Excel en la carpeta seleccionada. Luego hay que depurar los archivos de Excel que no sean de Mis Comprobantes.
+        - En caso de no tener listados los Excels con sus ubicaciones Existe el Boton de "listador" que genera "Archivos.txt" con la lista de los archivos de Excel en la carpeta seleccionada. Luego hay que depurar los archivos de Excel que no sean de Mis Comprobantes.
+
+---
+
+### Opción 2: Ejecutar el Script
 
 Los pasos para ejecutar el Script suele ser el siguiente:
 
-    ֎ Descargarse Python (https://www.python.org/downloads/)
+1. Descargarse Python (https://www.python.org/downloads/)
 
-    ֎ Instalar Python (https://www.python.org/downloads/)
+2. Instalar Python (https://www.python.org/downloads/)
 
-    ֎ Crearse un entorno virtual. Generalmente se hace con el comando:
+3. Descargar/Clonar el Script:
+        - Descargar el ZIP o
+        - Clonar el repositorio con el comando:
+        ```git
+        git clone https://github.com/abustosp/Control-Monotributistas.git
+        ```
 
-        python -m venv NombreDelEntornoVirtualaCrear
+4. Crearse un entorno virtual. Generalmente se hace con el comando:
 
-    ֎  Activar el entorno virtual (depdende del sistema operativo):
-    
-            Windows: EntornoVirtual\Scripts\activate
-    
-            Linux: source EntornoVirtual/bin/activate 
+    ```Python en Windows
+    python -m venv NombreDelEntornoVirtualaCrear
+    ```
 
-    ֎ Instalar las dependencias/Librerías del proyecto (generalmente se hace con el comando):
+    ```Python en Linux
+    python3 -m venv NombreDelEntornoVirtualaCrear
+    ```
 
-        pip install -r requirements.txt
+5.  Activar el entorno virtual (depdende del sistema operativo):
 
-            ֎ Si no se tiene el requirements.txt, se puede instalar cada librería con el comando:
+        - Windows: EntornoVirtual\Scripts\activate
 
-                pip install NombreDeLaLibreria1 NombreDeLaLibreria2==version NombreDeLaLibreria3>=version NombreDeLaLibreriaN<=version (generalmente suelo utilizar las siguientes librerias: pandas, numpy, lxml, customtkinter, matplotlib, seaborn , openpyxl, openai , PIL o pillow)
+        - Linux: source EntornoVirtual/bin/activate 
 
-    ֎ Descargar/Clonar el Script:
-            ֎ Descargar el ZIP o
-            ֎ Clonar el repositorio con el comando:
-                git clone URLDelRepositorio
+6. Instalar las dependencias/Librerías del proyecto (generalmente se hace con el comando):
+
+    ```Python	
+    pip install -r requirements.txt
+    ```
+
+    - Si no se tiene el requirements.txt, se puede instalar cada librería con el comando:
+
+    ```Python
+    pip install NombreDeLaLibreria1 NombreDeLaLibreria2==version NombreDeLaLibreria3>=version NombreDeLaLibreriaN<=version
+    ```
+
+        (generalmente suelo utilizar las siguientes librerias: pandas, numpy, lxml, customtkinter, matplotlib, seaborn , openpyxl, openai , PIL o pillow)
 
 
-Obviamente no me hago cargo del uso indebido del Scrip.
+---
+## Aclaraciones
 
-y si lo compartís debes hacelo gratis, y si querés podes mencioname también para que mas gente se meta en el mundo de la programacion/automatización con Python/RPA y/o mostrale mis videos para que vean que cosas pueden hacer)
+El uso del Programa/Script se ejecuta bajo la responsabilidad de quien lo utiliza. No me hago responsable de los daños que pueda ocasionar el uso indevido del mismo.
+
+Si lo compartís debes hacelo gratis bajo los lineamientos de GPL, adicionalmente podés mencioname también para que mas personas conozcan en el mundo de la programacion/automatización con Python/RPA y/o mostrale mis videos para que vean que cosas pueden hacer.
+
+---
+
+### Links de Interés:
+
+- Link de invitación al grupo de RPA en Discord: https://discord.gg/KVYyryvAcD
+
+- Link de invitación al grupo de RPA en WhatsApp: https://chat.whatsapp.com/IekktfvfTNLCkdIagO6xz3
+
+- Tutorial de Descarga de Bots desde Uipath: https://youtu.be/hD5BH7YzABw
+
+- Tutorial de Instalación y descarga de Repositorios con Git: https://youtu.be/ujk27tRdA80
+
+---
 
 Cualquier cosa pueden contactarme en:
 

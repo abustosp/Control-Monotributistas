@@ -4,7 +4,7 @@ Progrmama/Script para realizar masivamente el control de la facturación de los 
 
 ---
 
-El licenciamiento es bajo GPL (es decir que no se puede distribuir comercialmente, solamente GRATIS). y si se utiliza este el código, sus derivados también debne ser distribuidos de manera abierta y gratuita. 
+El licenciamiento es bajo PL (es decir que no se puede distribuir comercialmente, solamente GRATIS). y si se utiliza este el código, sus derivados también debne ser distribuidos de manera abierta y gratuita. 
 
 ---
 
@@ -14,9 +14,9 @@ El licenciamiento es bajo GPL (es decir que no se puede distribuir comercialment
 
     - V 1.0 : requiere que los archivos de Mis Comprobantes tengan un formato de nombre específico:
 
-        Fin de CUIT - MCE  - Periodo (en formato AAAAMM) - CUIT (sin guiones) - Nombre .xlxs
+        `Fin de CUIT - MCE  - Periodo (en formato AAAAMM) - CUIT (sin guiones) - Nombre .xlxs`
 
-        Ejemplo : "0 - MCE - 202304 - 20374730429 - Agustin Bustos.xlsx"
+        Ejemplo : `0 - MCE - 202304 - 20374730429 - Agustin Bustos.xlsx`
 
     - V 1.0.1: No requiere nombres específicos pero requiere que existe la primer fila donde dice "Mis Comprobantes Recibidos - CUIT XXXXXXXXXXX" 
 
@@ -83,7 +83,7 @@ Los pasos para ejecutar el Script suele ser el siguiente:
 
 El uso del Programa/Script se ejecuta bajo la responsabilidad de quien lo utiliza. No me hago responsable de los daños que pueda ocasionar el uso indevido del mismo.
 
-Si lo compartís debes hacelo gratis bajo los lineamientos de GPL, adicionalmente podés mencioname también para que mas personas conozcan en el mundo de la programacion/automatización con Python/RPA y/o mostrale mis videos para que vean que cosas pueden hacer.
+Si lo compartís debes hacelo gratis bajo los lineamientos de PL, adicionalmente podés mencioname también para que mas personas conozcan en el mundo de la programacion/automatización con Python/RPA y/o mostrale mis videos para que vean que cosas pueden hacer.
 
 ---
 

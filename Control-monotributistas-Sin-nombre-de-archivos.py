@@ -37,7 +37,7 @@ class ModeloPygubuApp:
             justify="center",
             relief="flat",
             takefocus=False,
-            text='Control de Monotributistas en Base a las Escalas de Facturación.\n\nEl programa utiliza como base el Excel de Categorías (que se debe actualizar manualmente) y otro excel que debe poseer en su primer columna los directorios completos de los archivos de Mis Comprobantes con el siguiente Formato:\n\nFin de CUIT - MCE - Periodo - CUIT(sin guiones) - Nombre del Cliente.xlsx\n',
+            text='Control de Monotributistas en Base a las Escalas de Facturación.\n\nEl programa utiliza como base el Excel de Categorías (que se debe actualizar manualmente) y otro excel que debe poseer en su primer columna los directorios completos de los archivos de Mis Comprobantes',
             wraplength=400)
         Label_1.pack(expand="true", side="top")
         Label_2 = ttk.Label(Toplevel_1)

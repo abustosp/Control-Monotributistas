@@ -9,6 +9,13 @@ def Control():
     # Leer Excel con las tablas de las escalas
     Categorias = pd.read_excel('Categorias.xlsx')
 
+    # Leer la celda 'A2' de la hoja 'Rango de Fechas' y guardarla en la variable 'fecha_inicial' en formato datetime
+    fecha_inicial = pd.read_excel('Categorias.xlsx', sheet_name='Rango de Fechas', header=None, skiprows=1, usecols=[0]).iloc[0,0]
+    fecha_inicial = pd.to_datetime(fecha_inicial , format='%d/%m/%Y')
+    # leer la celda 'B2' en fomato fecha
+    fecha_final = pd.read_excel('Categorias.xlsx', sheet_name='Rango de Fechas', header=None, skiprows=1, usecols=[1]).iloc[0,0]
+    fecha_final = pd.to_datetime(fecha_final , format='%d/%m/%Y')
+
     # Preguntar por el Excel con los Archivos de 'Mis Comprobantes'
     Archivos = askopenfilename(title="Seleccione el Excel con las ubicaciones Archivos de 'Mis Comprobantes'")
 
@@ -53,6 +60,15 @@ def Control():
 
     #Crear columna de 'MC' con los valores 'archivo' que van desde el caracter 5 al 8 en la Consolidado
     Consolidado['MC'] = Consolidado['Archivo'].str.split("-").str[1].str.strip()
+    
+    # Transformar la columna 'Fecha' en formato datetime
+    Consolidado['Fecha'] = pd.to_datetime(Consolidado['Fecha'] , format='%d/%m/%Y')
+
+    # Eliminar todas las filas que no esten en el rango de fechas
+    Consolidado = Consolidado[(Consolidado['Fecha'] >= fecha_inicial) & (Consolidado['Fecha'] <= fecha_final)]
+
+    # Transformar nuevamente la columna 'Fecha' en formato fecha de excel
+    Consolidado['Fecha'] = Consolidado['Fecha'].dt.strftime('%d/%m/%Y')
 
     #Crear Tabla dinámica con los totales de las columnas  'Imp. Total' por 'Archivo'
     TablaDinamica = pd.pivot_table(Consolidado, values=['Imp. Total' , 'Tipo'], index=['Cliente' , 'MC'], aggfunc={'Imp. Total': np.sum , 'Tipo': 'count'})
@@ -79,3 +95,6 @@ def Control():
 
     #Mostrar mensaje de finalización
     showinfo(title="Finalizado", message="El archivo se ha generado correctamente")
+
+if __name__ == "__main__":
+    Control()
